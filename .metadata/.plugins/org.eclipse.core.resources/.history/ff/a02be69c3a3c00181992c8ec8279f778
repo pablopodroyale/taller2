@@ -1,0 +1,53 @@
+package edu.ort.evaluacion_nivel;
+
+import java.util.ArrayList;
+
+public class Sitio {
+	private String nombre;
+	private String url;
+	private ArrayList<Usuario> listaDeUsuarios;
+	private ArrayList<Artista> nominaDeArtistas;
+
+	public Sitio(String nombre, String url) {
+		this.nombre = nombre;
+		this.url = url;
+		this.listaDeUsuarios = new ArrayList<>();
+		this.nominaDeArtistas = new ArrayList<Artista>();
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void registrarUsuario(String nombre, String clave) {
+		Usuario aux = null;
+		int indice = 0;
+		boolean seguirBuscando = true;
+		if (listaDeUsuarios.size() == 0) {
+			listaDeUsuarios.add(aux = new Usuario(nombre, clave));
+			System.out.println("Se agrego al usuario " + nombre);
+		} else {
+			aux = listaDeUsuarios.get(indice);
+			while (indice < listaDeUsuarios.size() && seguirBuscando == true) {
+				if (aux != null && aux.getNombre() == nombre) {
+					seguirBuscando = false;
+					System.out.println("EL usuario ya existe");
+				} else {
+					indice++;
+				}
+				if (indice == listaDeUsuarios.size()) {
+					aux = new Usuario(nombre, clave);
+					listaDeUsuarios.add(aux);
+					System.out.println("Se agrego al usuario " + nombre);
+				}
+			}
+
+		}
+
+	}
+
+}

@@ -1,0 +1,13 @@
+package edu.ort.evaluacion_nivel;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Sitio sitio = new Sitio("Ispotifai", "www.ispo.com");
+		sitio.registrarUsuario("pod", "123");
+		sitio.registrarUsuario("pepe", "123");
+		
+
+	}
+
+}

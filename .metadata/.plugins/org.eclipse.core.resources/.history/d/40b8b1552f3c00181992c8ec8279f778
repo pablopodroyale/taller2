@@ -1,0 +1,18 @@
+package edu.ort.evaluacion_nivel;
+
+import java.util.ArrayList;
+
+public class Sitio {
+	private String nombre;
+	private String url;
+	private ArrayList<Usuario> lsitaDeUsuarios;
+	private ArrayList<Artista> nominaDeArtistas;
+	
+	public Sitio(String nombre, String url) {
+		this.nombre = nombre;
+		this.url = url;
+		this.lsitaDeUsuarios = new ArrayList<>();
+		this.nominaDeArtistas = new ArrayList<Artista>();
+	}
+		
+}
